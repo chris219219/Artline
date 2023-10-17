@@ -29,6 +29,8 @@
                         <DataGridTextColumn Header="Revenue" Binding="{Binding Revenue.ValueString}"/>
                         <DataGridTextColumn Header="Priority" Binding="{Binding Priority}"/>
                         <DataGridTextColumn Header="Completion" Binding="{Binding CompletionPercent.ValueString}"/>
+                        <DataGridTextColumn Header="Listing Date" Binding="{Binding ListingDate}"/>
+                        <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>

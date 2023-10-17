@@ -21,6 +21,7 @@ public partial class Project : ObservableObject
         _projectType = projectType;
         _revenue = revenue;
         _priority = priority;
+        _listingDate = DateOnly.FromDateTime(DateTime.Now);
     }
 
     [ObservableProperty]
