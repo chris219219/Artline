@@ -1,0 +1,44 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:Artline.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+    x:Class="Artline.Views.DataPageView"
+    x:DataType="vm:DataPageViewModel">
+
+    <Design.DataContext>
+        <vm:DataPageViewModel/>
+    </Design.DataContext>
+
+    <TabControl Margin="30" TabStripPlacement="Left">
+        <TabItem Header="Projects">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="10 0">
+                    <Button><Image Source="/Assets/add.png"/></Button>
+                    <Button><Image Source="/Assets/edit.png"/></Button>
+                    <Button><Image Source="/Assets/delete.png"/></Button>
+                </StackPanel>
+                <Separator/>
+                <DataGrid Margin="10 0" ItemsSource="{Binding Database.Projects}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}"/>
+                        <DataGridTextColumn Header="Project Type" Binding="{Binding ProjectType}"/>
+                        <DataGridTextColumn Header="Revenue" Binding="{Binding Revenue.ValueString}"/>
+                        <DataGridTextColumn Header="Priority" Binding="{Binding Priority}"/>
+                        <DataGridTextColumn Header="Completion" Binding="{Binding CompletionPercent.ValueString}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Clients">
+        
+        </TabItem>
+        <TabItem Header="Priority Queue">
+
+        </TabItem>
+    </TabControl>
+
+</UserControl>
