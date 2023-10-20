@@ -16,14 +16,14 @@
         <TabItem Header="Projects">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="10 0">
-                    <Button><Image Source="/Assets/add.png"/></Button>
-                    <Button><Image Source="/Assets/edit.png"/></Button>
-                    <Button><Image Source="/Assets/delete.png"/></Button>
+                    <Button Command="{Binding AddProjectButtonCommand}"><Image Source="/Assets/add.png" Width="32" Height="32"/></Button>
+                    <Button IsEnabled="{Binding EditProjectButtonEnabled}"><Image Source="/Assets/edit.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
+                    <Button IsEnabled="{Binding DeleteProjectButtonEnabled}"><Image Source="/Assets/delete.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
                 </StackPanel>
                 <Separator/>
-                <DataGrid Margin="10 0" ItemsSource="{Binding Database.Projects}" AutoGenerateColumns="False">
+                <DataGrid Margin="10 0" ItemsSource="{Binding Database.Projects}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" SelectionChanged="OnProjectSelectionChanged">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="1*"/>
                         <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}"/>
                         <DataGridTextColumn Header="Project Type" Binding="{Binding ProjectType}"/>
                         <DataGridTextColumn Header="Revenue" Binding="{Binding Revenue.ValueString}"/>
@@ -36,7 +36,21 @@
             </StackPanel>
         </TabItem>
         <TabItem Header="Clients">
-        
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal" Margin="10 0">
+                    <Button><Image Source="/Assets/add.png" Width="32" Height="32"/></Button>
+                    <Button IsEnabled="{Binding EditClientButtonEnabled}"><Image Source="/Assets/edit.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
+                    <Button IsEnabled="{Binding DeleteClientButtonEnabled}"><Image Source="/Assets/delete.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
+                </StackPanel>
+                <Separator/>
+                <DataGrid Margin="10 0" ItemsSource="{Binding Database.Clients}" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Extended" SelectionChanged="OnClientSelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="2*"/>
+                        <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="1*"/>
+                        <DataGridTextColumn Header="Notes" Binding="{Binding Notes}" Width="3*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </TabItem>
         <TabItem Header="Priority Queue">
 

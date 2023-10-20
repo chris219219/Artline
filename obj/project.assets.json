@@ -4535,11 +4535,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/chris/csharp-projects/Artline/Artline.csproj",
+      "projectUniqueName": "/home/chris/CSharp-Projects/Artline/Artline.csproj",
       "projectName": "Artline",
-      "projectPath": "/home/chris/csharp-projects/Artline/Artline.csproj",
+      "projectPath": "/home/chris/CSharp-Projects/Artline/Artline.csproj",
       "packagesPath": "/home/chris/.nuget/packages/",
-      "outputPath": "/home/chris/csharp-projects/Artline/obj/",
+      "outputPath": "/home/chris/CSharp-Projects/Artline/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/chris/.nuget/NuGet/NuGet.Config"
@@ -4611,7 +4611,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.112/RuntimeIdentifierGraph.json"
       }
     }
   }

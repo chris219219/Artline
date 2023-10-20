@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dVxf+0ww3dNcM2C1E4sOL5y2vPaNrN9/2Sze0ldnbrv+ZDSRqWeAZsGSCQjIwAvjU509XllDe1NgGfUpCYu2ag==",
+  "dgSpecHash": "e4xBve8+LURgllqPRf7Ptl3XYGFhEiiA126GpgfWrq1g0GORuNYCh2h+tr9fqXGnm8aGYJTSpMSwDfGpi9X1EA==",
   "success": true,
-  "projectFilePath": "/home/chris/csharp-projects/Artline/Artline.csproj",
+  "projectFilePath": "/home/chris/CSharp-Projects/Artline/Artline.csproj",
   "expectedPackageFiles": [
     "/home/chris/.nuget/packages/avalonia/11.0.2/avalonia.11.0.2.nupkg.sha512",
     "/home/chris/.nuget/packages/avalonia.angle.windows.natives/2.1.0.2023020321/avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
