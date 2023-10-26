@@ -13,10 +13,13 @@
     </Design.DataContext>
 
     <TabControl Margin="30" TabStripPlacement="Left">
+
+
+        
         <TabItem Header="Projects">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="10 0">
-                    <Button Command="{Binding AddProjectButtonCommand}"><Image Source="/Assets/add.png" Width="32" Height="32"/></Button>
+                    <Button Command="{Binding AddProject}"><Image Source="/Assets/add.png" Width="32" Height="32"/></Button>
                     <Button IsEnabled="{Binding EditProjectButtonEnabled}"><Image Source="/Assets/edit.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
                     <Button IsEnabled="{Binding DeleteProjectButtonEnabled}"><Image Source="/Assets/delete.png" Width="32" Height="32"><Image.Styles><Style Selector="Image:disabled"><Setter Property="Opacity" Value="0.5"/></Style></Image.Styles></Image></Button>
                 </StackPanel>
@@ -26,15 +29,18 @@
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="1*"/>
                         <DataGridTextColumn Header="Client" Binding="{Binding Client.Name}"/>
                         <DataGridTextColumn Header="Project Type" Binding="{Binding ProjectType}"/>
-                        <DataGridTextColumn Header="Revenue" Binding="{Binding Revenue.ValueString}"/>
+                        <DataGridTextColumn Header="Revenue" Binding="{Binding Revenue.FormattedString}"/>
                         <DataGridTextColumn Header="Priority" Binding="{Binding Priority}"/>
-                        <DataGridTextColumn Header="Completion" Binding="{Binding CompletionPercent.ValueString}"/>
+                        <DataGridTextColumn Header="Completion" Binding="{Binding CompletionPercent.FormattedString}"/>
                         <DataGridTextColumn Header="Listing Date" Binding="{Binding ListingDate}"/>
                         <DataGridTextColumn Header="Due Date" Binding="{Binding DueDate}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
         </TabItem>
+
+
+
         <TabItem Header="Clients">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal" Margin="10 0">
@@ -52,9 +58,15 @@
                 </DataGrid>
             </StackPanel>
         </TabItem>
+
+
+
         <TabItem Header="Priority Queue">
 
         </TabItem>
+
+
+
     </TabControl>
 
 </UserControl>

@@ -1,19 +1,16 @@
-using System.Collections.ObjectModel;
-using System.Windows.Input;
+using System;
 using Artline.Models;
-using Avalonia.Collections;
-using Avalonia.Controls;
-using Avalonia.Platform;
+using Artline.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 
 namespace Artline.ViewModels;
 
 public partial class DataPageViewModel : ViewModelBase
 {
-    public DataPageViewModel(Database database)
+    public DataPageViewModel(Action<string> changePageAction, Database database)
     {
         Database = database;
+        _changePageAction = changePageAction;
     }
 
     public Database Database { get; }
@@ -29,4 +26,11 @@ public partial class DataPageViewModel : ViewModelBase
 
     [ObservableProperty]
     private bool _deleteClientButtonEnabled = false;
+
+    private Action<string> _changePageAction;
+
+    public void AddProject()
+    {
+        _changePageAction.Invoke(nameof(ProjectPageView));
+    }
 }

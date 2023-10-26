@@ -11,7 +11,7 @@ public readonly struct Euro
 
     public decimal Value { get; }
 
-    public string ValueString
+    public string FormattedString
     {
         get { return Value.ToString("C", new CultureInfo("de-DE").NumberFormat); }
     }

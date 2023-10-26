@@ -10,7 +10,7 @@ public readonly struct Percent
     }
 
     public decimal Value { get; }
-    public string ValueString
+    public string FormattedString
     {
         get { return Value.ToString("P", new NumberFormatInfo() { PercentDecimalDigits = 0 }); }
     }
